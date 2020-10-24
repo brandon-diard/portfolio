@@ -9,23 +9,25 @@
     <title>Portfolio de Brandon Diard</title>
 </head>
 <body onload="startTime()">
-    <header style="display: flex; align-items: center; justify-content: space-between;">
+    <header>
         <div class="start-btn unsel">
             <img src="https://daks2k3a4ib2z.cloudfront.net/57b0b52271bead8852aa6781/57b11afbe18710ca164a57b1_Start%20Logo%2032x32.png" style="height: 20px;"><h2>Demarrer</h2>
         </div>
-        <p id="time" class="unsel"></p>
+        <div class="time-ctn">
+            <p id="time" class="unsel"></p>
+        </div>
     </header>
-    <div class="window" id="window">
-        <div class="title-bar" id="windowheader">
+    <div class="window" id="welcome">
+        <div class="title-bar" id="welcomeheader">
           <div class="title-bar-text unsel">Welcome ! Bienvenue !</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
-            <button aria-label="Maximize"></button>
+            <button aria-label="Maximize" onclick="maxButton()"></button>
             <button aria-label="Close" onclick="closeButton()"></button>
           </div>
         </div>
-        <div class="window-body">
-            <img src="/images/w95.png" alt="Logo Windows 95">
+        <div class="window-body" id="welcomebody">
+            <img src="images/w95.png" alt="Logo Windows 95">
             <p>There's so much room for activities!</p>
         </div>
     </div>

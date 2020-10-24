@@ -1,5 +1,5 @@
 // Make the DIV element draggable:
-dragElement(document.getElementById("window"));
+dragElement(document.getElementById("welcome"));
 
 function dragElement(elmnt) {
   var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
@@ -29,6 +29,8 @@ function dragElement(elmnt) {
     // set the element's new position:
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    elmnt.style.margin = "0";
+    elmnt.style.width = "35%";
   }
 
   function closeDragElement() {
@@ -39,8 +41,13 @@ function dragElement(elmnt) {
 }
 
 function closeButton() {
-    var element = document.getElementById("window");
+    var element = document.getElementById("welcome");
     element.classList.add("hidden");
+}
+
+function maxButton() {
+    var element = document.getElementById("welcome");
+    element.classList.toggle("max");
 }
 
 function startTime() {
