@@ -8,15 +8,16 @@
     <link rel="stylesheet" href="css/style.css">
     <title>Portfolio de Brandon Diard</title>
 </head>
-<body>
-    <header>
-        <div class="start-btn">
-            <img src="https://daks2k3a4ib2z.cloudfront.net/57b0b52271bead8852aa6781/57b11afbe18710ca164a57b1_Start%20Logo%2032x32.png" style="height: 28px;"/><h2>Demarrer</h2>
+<body onload="startTime()">
+    <header style="display: flex; align-items: center; justify-content: space-between;">
+        <div class="start-btn unsel">
+            <img src="https://daks2k3a4ib2z.cloudfront.net/57b0b52271bead8852aa6781/57b11afbe18710ca164a57b1_Start%20Logo%2032x32.png" style="height: 20px;"><h2>Demarrer</h2>
         </div>
+        <p id="time" class="unsel"></p>
     </header>
     <div class="window" id="window">
         <div class="title-bar" id="windowheader">
-          <div class="title-bar-text">A Window With Stuff In It</div>
+          <div class="title-bar-text unsel">Welcome ! Bienvenue !</div>
           <div class="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
@@ -24,9 +25,10 @@
           </div>
         </div>
         <div class="window-body">
-          <p>There's so much room for activities!</p>
+            <img src="/images/w95.png" alt="Logo Windows 95">
+            <p>There's so much room for activities!</p>
         </div>
-      </div>
+    </div>
     
 
     <script src="js/script.js"></script>
