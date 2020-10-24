@@ -18,7 +18,7 @@ function dragElement(elmnt) {
     document.onmouseup = closeDragElement;
     // call a function whenever the cursor moves:
     document.onmousemove = elementDrag;
-  }
+  };
 
   function elementDrag(e) {
     // calculate the new cursor position:
@@ -30,25 +30,25 @@ function dragElement(elmnt) {
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
     elmnt.style.margin = "0";
-    elmnt.style.width = "35%";
-  }
+    elmnt.classList.remove("max");
+  };
 
   function closeDragElement() {
     // stop moving when mouse button is released:
     document.onmouseup = null;
     document.onmousemove = null;
   }
-}
+};
 
 function closeButton() {
     var element = document.getElementById("welcome");
     element.classList.add("hidden");
-}
+};
 
 function maxButton() {
     var element = document.getElementById("welcome");
     element.classList.toggle("max");
-}
+};
 
 function startTime() {
     var today = new Date();
@@ -60,8 +60,8 @@ function startTime() {
     document.getElementById('time').innerHTML =
     h + ":" + m + ":" + s;
     var t = setTimeout(startTime, 500);
-  }
+  };
   function checkTime(i) {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
-  }
+  };
