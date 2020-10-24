@@ -21,10 +21,29 @@ header .start-btn h2 {
 
 .start-btn {
     margin-top: 2px;
-    width: 90px;
-    height: 30px;
+    width: 110px;
+    height: 35px;
     border-style: solid;
     border-width: 2px;
     border-color: #dfdfdf #4b4b4b #4b4b4b #dfdfdf;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.title-bar-text {
+    user-select: none;
+}
+
+#window {
+    position: absolute;
+}
+
+#window button {
+    z-index: 999;
+}
+
+.hidden {
+    visibility: hidden;
 }
