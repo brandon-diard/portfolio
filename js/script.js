@@ -41,7 +41,7 @@ function dragElement(elmnt) {
 };
 
 window.addEventListener('click', function(e){   
-  if (document.getElementById('welcomebody').contains(e.target) || document.getElementById('welcome-tab').contains(e.target)){
+  if (document.getElementById('welcome').contains(e.target) || document.getElementById('welcome-tab').contains(e.target)){
     // Clicked in box
     var element = document.getElementById("welcomeheader");
     element.classList.remove("inactive");
@@ -68,11 +68,15 @@ function maxButton() {
     element.classList.toggle("max");
 };
 
-async function minButton() {
-  var element = document.getElementById("welcome");
-  element.classList.add("hidden");
-  var element = document.getElementById("welcome-tab");
-  element.classList.add("inactive-tab");
+function minButton() {
+    return new Promise(resolve => {
+    setTimeout(() => {
+      var element = document.getElementById("welcome");
+      element.classList.add("hidden");
+      var element = document.getElementById("welcome-tab");
+      element.classList.add("inactive-tab");
+    }, 1);
+  });
 };
 
 function restoreWelcome() {
