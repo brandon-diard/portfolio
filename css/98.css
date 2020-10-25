@@ -187,6 +187,10 @@ button::-moz-focus-inner {
   align-items: center;
 }
 
+.title-bar.inactive {
+  background: linear-gradient(90deg,grey,#b5b5b5);
+}
+
 .title-bar-text {
   font-weight: bold;
   color: white;

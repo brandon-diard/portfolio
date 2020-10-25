@@ -34,6 +34,34 @@ header .start-btn h2 {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    flex-shrink: 0;
+}
+
+.task {
+    width: 100%;
+    margin: 0 0.4rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.tab {
+    width: 16rem;
+    height: 2.4rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b;
+    padding: 0.4rem;
+}
+
+.tab p {
+    height: 17px;
+    font-family: "Pixelated MS Sans Serif";
+    padding-left: 0.4rem;
+    overflow: hidden;
 }
 
 .time-ctn {
@@ -53,14 +81,25 @@ header .start-btn h2 {
 }
 
 #welcome {
-    position: relative;
-    width: 35%;
-    margin: 0 auto;
-    top: 20rem;
+    position: absolute;
+    /* width: 35%; */
+    /* margin: 0 auto; */
+    top: 20%;
+    left: 40%;
 }
 
 .hidden {
     visibility: hidden;
+}
+
+.tab:active {
+    border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b!important;
+}
+
+.tab.inactive-tab {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #dfdfdf #4b4b4b #4b4b4b #dfdfdf;
 }
 
 .max {

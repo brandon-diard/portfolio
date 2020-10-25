@@ -40,15 +40,45 @@ function dragElement(elmnt) {
   }
 };
 
+window.addEventListener('click', function(e){   
+  if (document.getElementById('welcomebody').contains(e.target) || document.getElementById('welcome-tab').contains(e.target)){
+    // Clicked in box
+    var element = document.getElementById("welcomeheader");
+    element.classList.remove("inactive");
+    var element = document.getElementById("welcome-tab");
+    element.classList.remove("inactive-tab");
+  } else{
+    // Clicked outside the box
+    var element = document.getElementById("welcomeheader");
+    element.classList.add("inactive");
+    var element = document.getElementById("welcome-tab");
+    element.classList.add("inactive-tab");
+  }
+});
+
 function closeButton() {
     var element = document.getElementById("welcome");
+    var elmnt = document.getElementById("welcome-tab");
     element.classList.add("hidden");
+    elmnt.classList.add("hidden");
 };
 
 function maxButton() {
     var element = document.getElementById("welcome");
     element.classList.toggle("max");
 };
+
+async function minButton() {
+  var element = document.getElementById("welcome");
+  element.classList.add("hidden");
+  var element = document.getElementById("welcome-tab");
+  element.classList.add("inactive-tab");
+};
+
+function restoreWelcome() {
+  var element = document.getElementById("welcome");
+  element.classList.remove("hidden");
+}
 
 function startTime() {
     var today = new Date();
@@ -58,7 +88,7 @@ function startTime() {
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('time').innerHTML =
-    h + ":" + m + ":" + s;
+    h + ":" + m ;
     var t = setTimeout(startTime, 500);
   };
   function checkTime(i) {
