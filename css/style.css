@@ -1,3 +1,7 @@
+* {
+    user-select: none;
+}
+
 body {
     background: url(../images/bg.jpg);
     background-repeat: no-repeat;
@@ -17,6 +21,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 100;
 }
 
 header .start-btn h2 {
@@ -76,14 +81,9 @@ header .start-btn h2 {
     border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b;
 }
 
-.unsel {
-    user-select: none;
-}
-
 #welcome {
     position: absolute;
     /* width: 35%; */
-    /* margin: 0 auto; */
     top: 20%;
     left: 40%;
 }
@@ -102,7 +102,17 @@ header .start-btn h2 {
     border-color: #dfdfdf #4b4b4b #4b4b4b #dfdfdf;
 }
 
-.max {
+.desktop-window {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.window {
+    z-index: 93;
+}
+
+.window.max {
     left: 0!important;
     top: 0!important;
     margin: 0!important;
@@ -114,6 +124,19 @@ header .start-btn h2 {
     background-image: url("../images/icon/restore.svg");
     background-repeat: no-repeat;
     background-position: top 2px left 3px;
+}
+
+.anim {
+    animation: here 1s infinite;
+}
+
+@keyframes here {
+    from {
+        background: linear-gradient(90deg,grey,#b5b5b5);
+    }
+    to {
+       background: linear-gradient( 90deg, var(--dialog-blue), var(--dialog-blue-light) ); 
+    }
 }
 
 .window-body {
@@ -130,4 +153,23 @@ header .start-btn h2 {
 
 #welcomebody img {
     height: 25.6rem;
+}
+
+.icon {
+    width: 74px;
+    height: 74px;
+    font-size: 11px;
+    padding: 0.4rem;
+    display: grid;
+    text-align: center;
+    line-height: 1.5rem;
+    align-items: center;
+    justify-items: center;
+}
+
+.desktop-icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 2;
 }

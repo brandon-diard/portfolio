@@ -235,6 +235,7 @@ button::-moz-focus-inner {
   background-image: url("../images/icon/close.svg");
   background-repeat: no-repeat;
   background-position: top 3px left 4px;
+  margin-left: .2rem;
 }
 
 .window-body {

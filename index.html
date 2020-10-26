@@ -10,24 +10,28 @@
 </head>
 <body onload="startTime()">
     <header>
-        <div class="start-btn unsel">
+        <div class="start-btn">
             <img src="images/icon/start-logo.png" style="height: 20px;">
             <h2>Demarrer</h2>
         </div>
-        <div class="task">
-            <div class="tab unsel" id="welcome-tab" onclick="restoreWelcome()">
+        <div class="task" id="task">
+            <div class="tab" id="welcome-tab" onclick="restoreWelcome()">
                 <img src="images/icon/start-logo.png" style="height: 20px;">
                 <p class="welcome-tab">Welcome ! Bienvenue !</p>
             </div>
         </div>
         <div class="time-ctn">
-            <p id="time" class="unsel"></p>
+            <p id="time"></p>
         </div>
     </header>
-    <div class="desktop-window">
+    <div class="desktop" id="desktop">
+        <div class="icon" id="welcome-icon" ondblclick="welcomeIcon()">
+            <img src="images/icon/start-logo.png">
+            <p>Welcome ! Bienvenue !</p>
+        </div>
         <div class="window" id="welcome">
             <div class="title-bar" id="welcomeheader">
-                <div class="title-bar-text unsel">
+                <div class="title-bar-text">
                     <img src="images/icon/start-logo.png" style="height: 11px; display: inline-block; margin-right: 0.4rem;">
                     <p style="display: inline-block;">Welcome ! Bienvenue !</p>
                 </div>
@@ -43,9 +47,11 @@
             </div>
         </div>
     </div>
-    
 
-    <script src="js/script.js"></script>
+    <div id="script">
+        <script src="js/script.js"></script>
+        <script src="js/dragWelcome.js" id="dragWelcome"></script>
+    </div>
 
 </body>
 </html>

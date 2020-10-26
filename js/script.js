@@ -1,45 +1,3 @@
-// Make the DIV element draggable:
-dragElement(document.getElementById("welcome"));
-
-function dragElement(elmnt) {
-  var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-  if (document.getElementById(elmnt.id + "header")) {
-    // if present, the header is where you move the DIV from:
-    document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-  } else {
-    // otherwise, move the DIV from anywhere inside the DIV:
-    elmnt.onmousedown = dragMouseDown;
-  }
-
-  function dragMouseDown(e) {
-    // get the mouse cursor position at startup:
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    document.onmouseup = closeDragElement;
-    // call a function whenever the cursor moves:
-    document.onmousemove = elementDrag;
-  };
-
-  function elementDrag(e) {
-    // calculate the new cursor position:
-    pos1 = pos3 - e.clientX;
-    pos2 = pos4 - e.clientY;
-    pos3 = e.clientX;
-    pos4 = e.clientY;
-    // set the element's new position:
-    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    elmnt.style.margin = "0";
-    elmnt.classList.remove("max");
-  };
-
-  function closeDragElement() {
-    // stop moving when mouse button is released:
-    document.onmouseup = null;
-    document.onmousemove = null;
-  }
-};
-
 window.addEventListener('click', function(e){   
   if (document.getElementById('welcome').contains(e.target) || document.getElementById('welcome-tab').contains(e.target)){
     // Clicked in box
@@ -59,8 +17,14 @@ window.addEventListener('click', function(e){
 function closeButton() {
     var element = document.getElementById("welcome");
     var elmnt = document.getElementById("welcome-tab");
-    element.classList.add("hidden");
-    elmnt.classList.add("hidden");
+    var script = document.getElementById("dragWelcome");
+    script.remove();
+    return new Promise(resolve => {
+      setTimeout(() => {
+        element.remove();
+        elmnt.remove();
+      }, 1);
+    });
 };
 
 function maxButton() {
@@ -81,7 +45,19 @@ function minButton() {
 
 function restoreWelcome() {
   var element = document.getElementById("welcome");
-  element.classList.remove("hidden");
+  element.classList.toggle("hidden");
+
+  if (element.classList.contains("hidden")) {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        var elmnt = document.getElementById("welcome-tab");
+        elmnt.classList.add("inactive-tab")
+      }, 1);
+    });
+  } else {
+    var elmnt = document.getElementById("welcome-tab");
+    elmnt.classList.remove("inactive-tab")
+  }
 }
 
 function startTime() {
@@ -99,3 +75,61 @@ function startTime() {
     if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
   };
+
+function welcomeIcon() {
+
+  if (document.getElementById("welcome") == null) {
+    const welcomeDiv = document.createElement('div');
+    welcomeDiv.classList.add("window");
+    welcomeDiv.setAttribute("id", "welcome");
+    welcomeDiv.innerHTML = `
+    <div class="title-bar" id="welcomeheader">
+    <div class="title-bar-text unsel">
+        <img src="images/icon/start-logo.png" style="height: 11px; display: inline-block; margin-right: 0.4rem;">
+        <p style="display: inline-block;">Welcome ! Bienvenue !</p>
+    </div>
+  <div class="title-bar-controls">
+    <button aria-label="Minimize" onclick="minButton()"></button>
+    <button aria-label="Maximize" onclick="maxButton()"></button>
+    <button aria-label="Close" onclick="closeButton()"></button>
+  </div>
+  </div>
+  <div class="window-body" id="welcomebody">
+    <img src="images/w95.png" alt="Logo Windows 95">
+    <p>There's so much room for activities!</p>
+  </div>
+  `;
+  
+  const welcomeTab = document.createElement('div');
+  welcomeTab.classList.add("tab");
+  welcomeTab.classList.add("unsel");
+  welcomeTab.setAttribute("id", "welcome-tab");
+  welcomeTab.setAttribute("onclick", "restoreWelcome()");
+  welcomeTab.innerHTML = `
+  <img src="images/icon/start-logo.png" style="height: 20px;">
+  <p class="welcome-tab">Welcome ! Bienvenue !</p>
+  `;
+  
+  document.getElementById("task").appendChild(welcomeTab);
+  document.getElementById("desktop").appendChild(welcomeDiv);
+  return new Promise(resolve => {
+    setTimeout(() => {
+      var jsimport = document.createElement('script');
+      jsimport.src = 'js/dragWelcome.js';
+      jsimport.setAttribute("id", "dragWelcome");
+      document.getElementById("script").appendChild(jsimport);
+    }, 1);
+  });
+  } else {
+    var tabchange = document.getElementById("welcome-tab");
+    tabchange.classList.remove("inactive-tab");
+    var anim = document.getElementById("welcomeheader");
+    anim.classList.remove("inactive");
+    anim.classList.add("anim");
+    return new Promise(resolve => {
+      setTimeout(() => {
+        anim.classList.remove("anim");
+      }, 2000);
+    });
+  }
+}
