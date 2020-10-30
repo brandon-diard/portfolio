@@ -1,0 +1,174 @@
+@import url(../css/reset.css);
+@import url(../css/98.css);
+/* line 4, ../scss/styles.scss */
+* {
+  user-select: none;
+}
+
+/* line 8, ../scss/styles.scss */
+body {
+  background: url(../images/bg.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  overflow: hidden;
+}
+/* line 16, ../scss/styles.scss */
+body header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background: #BCBEBC;
+  min-width: 100%;
+  padding: 0.4rem;
+  border-top: 2px solid #F4F5EF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+}
+/* line 30, ../scss/styles.scss */
+body header .start-btn {
+  width: 94px;
+  height: 24px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dfdfdf #4b4b4b #4b4b4b #dfdfdf;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-shrink: 0;
+}
+/* line 43, ../scss/styles.scss */
+body header .start-btn h2 {
+  font-size: 14px;
+  font-family: "Pixelated MS Sans Serif fix";
+}
+/* line 52, ../scss/styles.scss */
+body header .task {
+  width: 100%;
+  margin: 0 0.4rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+}
+/* line 60, ../scss/styles.scss */
+body header .task .tab {
+  width: 16rem;
+  height: 2.4rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b;
+  padding: 0.4rem;
+}
+/* line 72, ../scss/styles.scss */
+body header .task .tab:active {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b !important;
+}
+/* line 80, ../scss/styles.scss */
+body header .task .tab.inactive-tab {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #dfdfdf #4b4b4b #4b4b4b #dfdfdf;
+}
+/* line 88, ../scss/styles.scss */
+body header .task .tab p {
+  height: 17px;
+  font-family: "Pixelated MS Sans Serif fix";
+  padding-left: 0.4rem;
+  overflow: hidden;
+}
+/* line 101, ../scss/styles.scss */
+body header .time-ctn {
+  height: 24px;
+  font-size: 1.2rem;
+  padding: 0.4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b;
+}
+/* line 119, ../scss/styles.scss */
+body .desktop .icon {
+  width: 74px;
+  height: 74px;
+  font-size: 11px;
+  padding: 0.4rem;
+  display: grid;
+  text-align: center;
+  line-height: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+/* line 133, ../scss/styles.scss */
+body .desktop .window {
+  z-index: 93;
+}
+/* line 137, ../scss/styles.scss */
+body .desktop .window.max {
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  height: 96.5vh !important;
+}
+/* line 145, ../scss/styles.scss */
+body .desktop .window.max button[aria-label="Maximize"] {
+  background-image: url("../images/icon/restore.svg");
+  background-repeat: no-repeat;
+  background-position: top 2px left 3px;
+}
+/* line 155, ../scss/styles.scss */
+body .desktop .window .window-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+/* line 165, ../scss/styles.scss */
+body .desktop .window#welcome {
+  position: absolute;
+  /* width: 35%; */
+  min-width: 20%;
+  top: 20%;
+  left: 40%;
+}
+/* line 173, ../scss/styles.scss */
+body .desktop .window#welcome #welcomebody {
+  font-size: 1.1rem;
+}
+/* line 177, ../scss/styles.scss */
+body .desktop .window#welcome #welcomebody img {
+  height: 25.6rem;
+}
+/* line 183, ../scss/styles.scss */
+body .desktop .window#welcome #welcomebody h1 {
+  font-size: 1.6rem;
+}
+/* line 197, ../scss/styles.scss */
+body .hidden {
+  visibility: hidden;
+  display: none;
+}
+/* line 204, ../scss/styles.scss */
+body .anim {
+  animation: here 1s infinite;
+}
+
+@keyframes here {
+  from {
+    background: linear-gradient(90deg, grey, #b5b5b5);
+  }
+  to {
+    background: linear-gradient(90deg, var(--dialog-blue), var(--dialog-blue-light));
+  }
+}
