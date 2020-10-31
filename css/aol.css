@@ -1,0 +1,15 @@
+BODY {margin-top: 4; margin-left: 0;font-size: 12px; font-family: Arial, helv, helvetica, sans serif} 
+
+A:link {color: #0000cc}
+A:visited {color: #000066}
+A:hover {color:#000066}
+
+.yellow {font-family:Arial, helv, helvetica, sans serif; color: yellow; font-weight:bold; font-size:14px}
+.white {font-family:Arial, helv, helvetica, sans serif; color: white; font-weight:bold; font-size:14px}
+
+BR, TD, P, UL, OL, LI, DL, BLOCKQUOTE, SPAN, DIV {font-size: 12px; font-family: Arial, helv, helvetica, sans serif} 
+
+TH {font-size: 12px; font-family: Arial, helv, helvetica, sans serif; font-weight:bold}
+
+SELECT {font-size:11px}
+LI {list-style-type: circle}

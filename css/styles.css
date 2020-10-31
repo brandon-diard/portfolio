@@ -72,19 +72,24 @@ body header .task .tab:active {
   border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b !important;
 }
 /* line 80, ../scss/styles.scss */
+body header .task .tab:focus-within {
+  outline: 1px dotted #000000;
+  outline-offset: -4px;
+}
+/* line 87, ../scss/styles.scss */
 body header .task .tab.inactive-tab {
   border-style: solid;
   border-width: 2px;
   border-color: #dfdfdf #4b4b4b #4b4b4b #dfdfdf;
 }
-/* line 88, ../scss/styles.scss */
+/* line 95, ../scss/styles.scss */
 body header .task .tab p {
   height: 17px;
   font-family: "Pixelated MS Sans Serif fix";
   padding-left: 0.4rem;
   overflow: hidden;
 }
-/* line 101, ../scss/styles.scss */
+/* line 108, ../scss/styles.scss */
 body header .time-ctn {
   height: 24px;
   font-size: 1.2rem;
@@ -96,10 +101,10 @@ body header .time-ctn {
   border-width: 2px;
   border-color: #4b4b4b #dfdfdf #dfdfdf #4b4b4b;
 }
-/* line 119, ../scss/styles.scss */
+/* line 126, ../scss/styles.scss */
 body .desktop .icon {
-  width: 74px;
-  height: 74px;
+  width: 72px;
+  height: 72px;
   font-size: 11px;
   padding: 0.4rem;
   display: grid;
@@ -108,11 +113,11 @@ body .desktop .icon {
   align-items: center;
   justify-items: center;
 }
-/* line 133, ../scss/styles.scss */
+/* line 140, ../scss/styles.scss */
 body .desktop .window {
   z-index: 93;
 }
-/* line 137, ../scss/styles.scss */
+/* line 144, ../scss/styles.scss */
 body .desktop .window.max {
   left: 0 !important;
   top: 0 !important;
@@ -120,13 +125,18 @@ body .desktop .window.max {
   width: 100% !important;
   height: 96.5vh !important;
 }
-/* line 145, ../scss/styles.scss */
+/* line 152, ../scss/styles.scss */
 body .desktop .window.max button[aria-label="Maximize"] {
   background-image: url("../images/icon/restore.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
 }
-/* line 155, ../scss/styles.scss */
+/* line 164, ../scss/styles.scss */
+body .desktop .window .title-bar-text {
+  display: flex;
+  align-items: center;
+}
+/* line 171, ../scss/styles.scss */
 body .desktop .window .window-body {
   display: flex;
   flex-direction: column;
@@ -134,7 +144,7 @@ body .desktop .window .window-body {
   align-items: center;
   height: 100%;
 }
-/* line 165, ../scss/styles.scss */
+/* line 181, ../scss/styles.scss */
 body .desktop .window#welcome {
   position: absolute;
   /* width: 35%; */
@@ -142,24 +152,45 @@ body .desktop .window#welcome {
   top: 20%;
   left: 40%;
 }
-/* line 173, ../scss/styles.scss */
+/* line 189, ../scss/styles.scss */
 body .desktop .window#welcome #welcomebody {
   font-size: 1.1rem;
 }
-/* line 177, ../scss/styles.scss */
+/* line 193, ../scss/styles.scss */
 body .desktop .window#welcome #welcomebody img {
   height: 25.6rem;
 }
-/* line 183, ../scss/styles.scss */
+/* line 199, ../scss/styles.scss */
 body .desktop .window#welcome #welcomebody h1 {
   font-size: 1.6rem;
 }
-/* line 197, ../scss/styles.scss */
-body .hidden {
-  visibility: hidden;
-  display: none;
+/* line 207, ../scss/styles.scss */
+body .desktop .window#welcome #welcomebody ul li {
+  font-family: "Pixelated MS Sans Serif fix";
 }
-/* line 204, ../scss/styles.scss */
+/* line 219, ../scss/styles.scss */
+body .desktop .window#internet {
+  position: absolute;
+  min-width: 30%;
+  top: 20%;
+  left: 40%;
+}
+/* line 226, ../scss/styles.scss */
+body .desktop .window#internet #internetbody {
+  height: 317.5px;
+}
+/* line 230, ../scss/styles.scss */
+body .desktop .window#internet #internetbody iframe {
+  background: #fff;
+  width: 100%;
+  height: 317.5px;
+}
+/* line 244, ../scss/styles.scss */
+body .hidden {
+  visibility: hidden !important;
+  display: none !important;
+}
+/* line 251, ../scss/styles.scss */
 body .anim {
   animation: here 1s infinite;
 }

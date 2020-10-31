@@ -17,6 +17,10 @@
                 <img src="images/icon/start-logo.png" style="height: 20px;">
                 <p class="welcome-tab">Welcome ! Bienvenue !</p>
             </div>
+            <div class="tab" id="internet-tab" onclick="restoreInternet()">
+                <img src="images/icon/internet.ico" style="height: 20px;">
+                <p class="internet-tab">Internet Explorer</p>
+            </div>
         </div>
         <div class="time-ctn">
             <p id="time"></p>
@@ -27,6 +31,10 @@
             <img src="images/icon/start-logo.png">
             <p>Welcome ! Bienvenue !</p>
         </div>
+        <div class="icon" id="internet-icon" ondblclick="internetIcon()">
+            <img src="images/icon/internet.ico">
+            <p>Internet Explorer</p>
+        </div>
         <div class="window" id="welcome">
             <div class="title-bar" id="welcomeheader">
                 <div class="title-bar-text">
@@ -34,30 +42,46 @@
                     <p style="display: inline-block;">Welcome ! Bienvenue !</p>
                 </div>
             <div class="title-bar-controls">
-                <button aria-label="Minimize" onclick="minButton()"></button>
-                <button aria-label="Maximize" onclick="maxButton()"></button>
-                <button aria-label="Close" onclick="closeButton()"></button>
+                <button aria-label="Minimize" onclick="minButtonWelcome()"></button>
+                <button aria-label="Maximize" onclick="maxButtonWelcome()"></button>
+                <button aria-label="Close" onclick="closeButtonWelcome()"></button>
             </div>
             </div>
             <div class="window-body" id="welcomebody">
                 <img src="images/w95.png" alt="Logo Windows 95">
                 <h1>Bienvenue sur mon Portfolio !</h1>
                 <ul>
-                    <li>Décrouvrez mes différents travaux présent dans leurs dossiers respectifs</li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
+                    <li>Décrouvrez mes différents travaux présent dans leurs dossiers respectifs.</li>
+                    <li>Changez vos paramètres sur le panneau de configuration.</li>
+                    <li>(Il existe une fonctionnalité caché !)</li>
                 </ul>
-                <button onclick="closeButton()">OK</button>
-                <p>Pour découvrir mes différents travaux, il vous suffit de double-clique sur une des icônes présent sur le bureau (comme à l'époque et aujourd'hui sur ce très vieux système d'exploitation !)</p>
+                <button onclick="closeButtonWelcome()">OK</button>
+            </div>
+        </div>
+        <div class="window" id="internet">
+            <div class="title-bar" id="internetheader">
+                <div class="title-bar-text">
+                    <img src="images/icon/internet.ico" style="height: 11px; display: inline-block; margin-right: 0.4rem;">
+                    <p style="display: inline-block;">Internet Explorer</p>
+                </div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize" onclick="minButtonInternet()"></button>
+                <button aria-label="Maximize" onclick="maxButtonInternet()"></button>
+                <button aria-label="Close" onclick="closeButtonInternet()"></button>
+            </div>
+            </div>
+            <div class="window-body" id="internetbody">
+                <input type="button" value="Back" onclick="history.back()">
+                <iframe src="https://www.google.fr/" frameborder="0" sandbox="allow-forms" width="100%" height="100%" name="Internet">
+                    <p>Votre navigateur internet ne supporte pas cette fonctionnalité !</p>
+                </iframe>
             </div>
         </div>
     </div>
 
-    <div id="script">
-        <script src="js/script.js"></script>
-        <script src="js/dragWelcome.js" id="dragWelcome"></script>
-    </div>
+
+    <script src="js/script.js"></script>
+
 
 </body>
 </html>
