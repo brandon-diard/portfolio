@@ -112,12 +112,13 @@ body .desktop .icon {
   line-height: 1.5rem;
   align-items: center;
   justify-items: center;
+  color: #fff;
 }
-/* line 140, ../scss/styles.scss */
+/* line 141, ../scss/styles.scss */
 body .desktop .window {
   z-index: 93;
 }
-/* line 144, ../scss/styles.scss */
+/* line 145, ../scss/styles.scss */
 body .desktop .window.max {
   left: 0 !important;
   top: 0 !important;
@@ -125,18 +126,18 @@ body .desktop .window.max {
   width: 100% !important;
   height: 96.5vh !important;
 }
-/* line 152, ../scss/styles.scss */
+/* line 153, ../scss/styles.scss */
 body .desktop .window.max button[aria-label="Maximize"] {
   background-image: url("../images/icon/restore.svg");
   background-repeat: no-repeat;
   background-position: top 2px left 3px;
 }
-/* line 164, ../scss/styles.scss */
+/* line 165, ../scss/styles.scss */
 body .desktop .window .title-bar-text {
   display: flex;
   align-items: center;
 }
-/* line 171, ../scss/styles.scss */
+/* line 172, ../scss/styles.scss */
 body .desktop .window .window-body {
   display: flex;
   flex-direction: column;
@@ -144,7 +145,7 @@ body .desktop .window .window-body {
   align-items: center;
   height: 100%;
 }
-/* line 181, ../scss/styles.scss */
+/* line 182, ../scss/styles.scss */
 body .desktop .window#welcome {
   position: absolute;
   /* width: 35%; */
@@ -152,45 +153,68 @@ body .desktop .window#welcome {
   top: 20%;
   left: 40%;
 }
-/* line 189, ../scss/styles.scss */
+/* line 190, ../scss/styles.scss */
 body .desktop .window#welcome #welcomebody {
   font-size: 1.1rem;
 }
-/* line 193, ../scss/styles.scss */
+/* line 194, ../scss/styles.scss */
 body .desktop .window#welcome #welcomebody img {
   height: 25.6rem;
 }
-/* line 199, ../scss/styles.scss */
+/* line 200, ../scss/styles.scss */
 body .desktop .window#welcome #welcomebody h1 {
   font-size: 1.6rem;
 }
-/* line 207, ../scss/styles.scss */
+/* line 208, ../scss/styles.scss */
 body .desktop .window#welcome #welcomebody ul li {
   font-family: "Pixelated MS Sans Serif fix";
 }
-/* line 219, ../scss/styles.scss */
+/* line 220, ../scss/styles.scss */
 body .desktop .window#internet {
   position: absolute;
-  min-width: 30%;
+  min-width: 65%;
+  top: 20%;
+  left: 10%;
+}
+/* line 227, ../scss/styles.scss */
+body .desktop .window#internet #internetbody {
+  height: 100%;
+  background: #fff;
+}
+/* line 232, ../scss/styles.scss */
+body .desktop .window#internet #internetbody .internettoolbar {
+  display: flex;
+  width: 100%;
+  background: #c0c0c0;
+}
+/* line 238, ../scss/styles.scss */
+body .desktop .window#internet #internetbody .internettoolbar input {
+  user-select: text;
+}
+/* line 246, ../scss/styles.scss */
+body .desktop .window#internet #internetbody iframe {
+  display: block;
+  min-height: 600px;
+  background: #fff;
+}
+/* line 259, ../scss/styles.scss */
+body .desktop .window#popupInternet {
+  position: absolute;
+  /* width: 35%; */
+  min-width: 20%;
   top: 20%;
   left: 40%;
 }
-/* line 226, ../scss/styles.scss */
-body .desktop .window#internet #internetbody {
-  height: 317.5px;
+/* line 267, ../scss/styles.scss */
+body .desktop .window#popupInternet #popupInternetbody {
+  font-size: 1.1rem;
 }
-/* line 230, ../scss/styles.scss */
-body .desktop .window#internet #internetbody iframe {
-  background: #fff;
-  width: 100%;
-  height: 317.5px;
-}
-/* line 244, ../scss/styles.scss */
+/* line 279, ../scss/styles.scss */
 body .hidden {
   visibility: hidden !important;
   display: none !important;
 }
-/* line 251, ../scss/styles.scss */
+/* line 286, ../scss/styles.scss */
 body .anim {
   animation: here 1s infinite;
 }
